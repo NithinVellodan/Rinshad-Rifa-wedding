@@ -23,6 +23,7 @@ function meta(variant) {
   const what = variant === 'reception' ? 'wedding reception' : 'Nikah';
   const description = `You're invited to the ${what} of ${couple} — ${w.long}${where}`;
   const url = config.siteUrl ? config.siteUrl.replace(/\/$/, '') + (variant === 'reception' ? '/reception' : '') : '';
+  const imageUrl = config.siteUrl ? config.siteUrl.replace(/\/$/, '') + '/images/preview.png' : '/images/preview.png';
   const tags = [
     `<title>${esc(title)}</title>`,
     `<meta name="description" content="${esc(description)}" />`,
@@ -30,9 +31,13 @@ function meta(variant) {
     `<meta property="og:site_name" content="${esc(couple)}" />`,
     `<meta property="og:title" content="${esc(title)}" />`,
     `<meta property="og:description" content="${esc(description)}" />`,
-    `<meta name="twitter:card" content="summary" />`,
+    `<meta property="og:image" content="${esc(imageUrl)}" />`,
+    `<meta property="og:image:width" content="1200" />`,
+    `<meta property="og:image:height" content="630" />`,
+    `<meta name="twitter:card" content="summary_large_image" />`,
     `<meta name="twitter:title" content="${esc(title)}" />`,
     `<meta name="twitter:description" content="${esc(description)}" />`,
+    `<meta name="twitter:image" content="${esc(imageUrl)}" />`,
   ];
   if (url) tags.push(`<meta property="og:url" content="${esc(url)}" />`, `<link rel="canonical" href="${esc(url)}" />`);
   return tags.join('\n    ');

@@ -73,5 +73,5 @@ export const config = {
   },
 
   // Public address after deploying (used for share previews), e.g. 'https://rinshad-rifa.vercel.app'.
-  siteUrl: '',
+  siteUrl: 'https://rinshad-rifa-wedding.vercel.app',
 };
