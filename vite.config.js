@@ -80,7 +80,11 @@ function invitationHtml() {
     configurePreviewServer: (server) => void server.middlewares.use(rewrite),
     transformIndexHtml(html, ctx) {
       const variant = /reception[\\/]index\.html$/.test(ctx.filename) ? 'reception' : 'full';
-      return html.replace('<!--meta-->', meta(variant)).replace('<!--loader-->', loader).replace('<!--noscript-->', noscript(variant));
+      const analytics = `<script defer src="/_vercel/insights/script.js"></script>`;
+      return html
+        .replace('<!--meta-->', meta(variant) + '\n    ' + analytics)
+        .replace('<!--loader-->', loader)
+        .replace('<!--noscript-->', noscript(variant));
     },
   };
 }
