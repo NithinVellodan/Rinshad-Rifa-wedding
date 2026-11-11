@@ -53,9 +53,9 @@ export const config = {
   },
 
   // Closing page sign-off — Nikkah invitation
-  families: 'Kolangara Family & Pullanikkattil Family',
+  families: 'Kolangara Family\n& Pullanikkattil Family',
   // Closing page sign-off — Reception invitation
-  familiesReception: 'Kolangara Family & Pullanikkattil Family',
+  familiesReception: 'Kolangara Family\n& Pullanikkattil Family',
 
   // Put the song in /public/music/ and set e.g. src: '/music/song.mp3'. Empty = no music button.
   music: { src: '/music/song.mp3', volume: 0.6, startAt: 0 },
