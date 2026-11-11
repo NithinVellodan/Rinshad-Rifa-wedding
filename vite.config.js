@@ -15,7 +15,7 @@ function when(iso) {
 }
 
 function meta(variant) {
-  const couple = `${config.bride.name} & ${config.groom.name}`;
+  const couple = `${config.groom.name} & ${config.bride.name}`;
   const main = variant === 'reception' ? config.reception : config.nikah;
   const w = when(main.start);
   const title = `${couple} · ${main.title} · ${w.short}`;
